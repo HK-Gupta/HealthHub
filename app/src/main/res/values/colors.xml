@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#33aaaaaa</color>
+    <color name="textGrey">#FFAAAAAA</color>
+    <color name="actionBar">#FF242424</color>
+    <color name="btnColor">#FF00FFFF</color>
+</resources>

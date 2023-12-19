@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HealthHub</string>
+    <string name="heading">Choose one to forecast the outcome.</string>
+</resources>

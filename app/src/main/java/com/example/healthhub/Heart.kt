@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -23,36 +24,37 @@ class Heart : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.black)
 
-//        binding.progressBar.visibility = View.GONE
+        binding.progressBar.visibility = View.GONE
 
         //Checking for Gender.
         if(binding.genderButtonMale.isChecked) { gender = 1; }
         if(binding.genderButtonFemale.isChecked) { gender = 0; }
 
         binding.btnPredict.setOnClickListener {
-//            binding.progressBar.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
             val stringRequest = object : StringRequest(
                 Method.POST, url,
                 Response.Listener {
-//                    binding.progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     try {
                         val jsonObject = JSONObject(it)
                         val res = jsonObject.getString("output")
                         if(res == "1") {
-                            binding.textResult.text = "Positive"
+                            binding.textResult.text = getString(R.string.heartPos)
                         } else {
-                            binding.textResult.text = "Negative"
+                            binding.textResult.text = getString(R.string.heartNeg)
                         }
                     } catch (e: JSONException) {
                         e.printStackTrace()
                     }
                 },
                 Response.ErrorListener {
-//                    binding.progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show()
                 }) {
-                override fun getParams(): Map<String, String>? {
+                override fun getParams(): Map<String, String> {
                     val params = HashMap<String, String>()
 //                  age, sex, cp, trtbps, chol, fbs, restecg, thalachh, exng, oldpeak, slp, caa, thall
                     params["age"] = binding.age.text.toString()

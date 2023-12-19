@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">HealthHub</string>
     <string name="heading">Choose one to forecast the outcome.</string>
+    <string name="strokePos">Increased likelihood of having stroke.</string>
+    <string name="strokeNeg">Reduced likelihood of having stroke.</string>
+    <string name="heartPos">Increased likelihood of having Heart Disease.</string>
+    <string name="heartNeg">Reduced likelihood of having Heart Disease.</string>
+    <string name="fitness_level">Fitness Level: %1$s</string>
+    <string name="diaPos">Increased likelihood of having diabetes.</string>
+    <string name="diaNeg">Reduced likelihood of having diabetes.</string>
 </resources>

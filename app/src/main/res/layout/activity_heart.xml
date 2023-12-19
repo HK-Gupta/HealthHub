@@ -30,12 +30,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="18dp"
                 android:layout_marginRight="7dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/text_background"
                 android:padding="7dp"
-                android:text="Fill Up the Following Details."
+                android:text="Fill Up the Following Details for Heart Disease Prediction."
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -147,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
                 android:background="@drawable/text_background"
-                android:hint="Blood Pressure (Fasting)"
+                android:hint="Is Fasting blood sugar level > 120mg/dl"
                 android:inputType="numberDecimal"
                 android:padding="7dp"
                 android:textAlignment="center"
@@ -273,9 +273,36 @@
                 android:padding="7dp"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="21sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/progress_background"
+        android:padding="4dp"
+        android:layout_margin="18dp"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Wait.."
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
